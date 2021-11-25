@@ -1,7 +1,7 @@
 function App() {
   return (
     <div>
-      <h1>Sergo App!</h1>
+      <h1 className='text-primary'>Sergio App!</h1>
     </div>
   )
 }
