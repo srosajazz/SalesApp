@@ -25,7 +25,7 @@ const App = () => {
         </div>
         {/*  */}
         <div className='py-3'>
-          <h2 className='text-primary'>Data List</h2>
+          <h2 className='text-primary'>Student Data List</h2>
         </div>
         <DataTable />
       </div>
