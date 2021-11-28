@@ -11,7 +11,7 @@ const DonutChart = () => {
   //wrong way
   let chartData: ChartData = { labels: [], series: [] }
 
-  axios.get(`${BASE_URL}sales/amount-by-seller`).then((response) => {
+  axios.get(`${BASE_URL}/sales/amount-by-seller`).then((response) => {
     const data = response.data as SaleSum[]
     const myLabels = data.map((x) => x.sellerName)
     const mySeries = data.map((x) => x.sum)
