@@ -2,6 +2,7 @@ package com.sergiorosa.SalesApp.entities;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,33 +27,52 @@ public class Seller {
     public Seller() {
     }
 
-	public Seller(Long id, String name) {
-		this.id = id;
-		this.name = name;
-	}
+    public Seller(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
-	public Long getId() {
-		return id;
-	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public List<Sale> getSales() {
-		return sales;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setSales(List<Sale> sales) {
-		this.sales = sales;
-	}
-	
+    public List<Sale> getSales() {
+        return sales;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Seller seller = (Seller) o;
+        return Objects.equals(id, seller.id) && Objects.equals(name, seller.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name);
+    }
+
+    @Override
+    public String toString() {
+        return "Seller{" +
+            "id=" + id +
+            ", name='" + name + '\'' +
+            '}';
+    }
+
+
 }

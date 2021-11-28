@@ -7,7 +7,6 @@ import com.sergiorosa.SalesApp.entities.Seller;
 public class SaleSuccessDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
 	private String sellerName;
     private Long visited;
     private Long deals;

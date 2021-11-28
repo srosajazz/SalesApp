@@ -1,6 +1,7 @@
 package com.sergiorosa.SalesApp.entities;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -87,5 +88,30 @@ public class Sale {
 
     public void setSeller(Seller seller) {
         this.seller = seller;
-    }	
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Sale sale = (Sale) o;
+        return Objects.equals(id, sale.id) && Objects.equals(visited, sale.visited) && Objects.equals(deals, sale.deals) && Objects.equals(amount, sale.amount) && Objects.equals(date, sale.date) && Objects.equals(seller, sale.seller);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, visited, deals, amount, date, seller);
+    }
+
+    @Override
+    public String toString() {
+        return "Sale{" +
+            "id=" + id +
+            ", visited=" + visited +
+            ", deals=" + deals +
+            ", amount=" + amount +
+            ", localDate=" + date +
+            ", seller=" + seller +
+            '}';
+    }
 }

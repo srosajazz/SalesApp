@@ -15,29 +15,38 @@ import com.sergiorosa.SalesApp.dto.SaleSuccessDTO;
 import com.sergiorosa.SalesApp.dto.SaleSumDTO;
 import com.sergiorosa.SalesApp.service.SaleService;
 
+
+
 @RestController
 @RequestMapping(value = "/sales")
 public class SaleController {
-	
-	@Autowired
-	private SaleService service;
-	
-	@GetMapping
-	public ResponseEntity<Page<SaleDTO>> findAll(Pageable pageable){
-		Page<SaleDTO> list = service.findAll(pageable);
-		return ResponseEntity.ok(list);
-	}
-	
-	@GetMapping(value = "/amount-by-seller")
-	public ResponseEntity<List<SaleSumDTO>> amountGroupedBySeller(){
-		List<SaleSumDTO> list = service. amountGroupedBySeller();
-		return ResponseEntity.ok(list);
-	}
-	
-	@GetMapping(value = "/success-by-seller")
-	public ResponseEntity<List<SaleSuccessDTO>> successGroupedBySeller() {
-		List<SaleSuccessDTO> list = service.sucessGroupedBySeller();
-		return ResponseEntity.ok(list);
-	}
+
+    @Autowired
+    private SaleService service;
+
+    @GetMapping
+    public ResponseEntity<Page<SaleDTO>> findAll(Pageable pageable) {
+        Page<SaleDTO> list = service.findAll(pageable);
+
+        return ResponseEntity.ok(list);
+
+    }
+
+
+    @GetMapping(value = "/amount-by-seller")
+    public ResponseEntity<List<SaleSumDTO>> amountGroupedBySeller() {
+        List<SaleSumDTO> list = service.amountGroupedBySeller();
+
+        return ResponseEntity.ok(list);
+
+    }
+
+    @GetMapping(value = "/success-by-seller")
+    public ResponseEntity<List<SaleSuccessDTO>> successGroupedBySeller() {
+        List<SaleSuccessDTO> list = service.sucessGroupedBySeller();
+
+        return ResponseEntity.ok(list);
+
+    }
 
 }

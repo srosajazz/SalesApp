@@ -4,83 +4,86 @@ import java.time.LocalDate;
 
 import com.sergiorosa.SalesApp.entities.Sale;
 
+
+
 public class SaleDTO {
-	
-	  private Long id;
-	  private Integer visited;
-	  private Integer deals;
-	  private Double amount;
-	  private LocalDate date;
-	  
-	  private SellerDTO seller;
 
-	  public SaleDTO() {
-		  
-	  }
+    private Long id;
 
-	public SaleDTO(Long id, Integer visited, Integer deals, Double amount, LocalDate date, SellerDTO seller) {
-		this.id = id;
-		this.visited = visited;
-		this.deals = deals;
-		this.amount = amount;
-		this.date = date;
-		this.seller = seller;
-	}
-	
-	public SaleDTO(Sale entity) {
-	id = entity.getId();
-	visited = entity.getVisited();
-	deals = entity.getDeals();
-	amount = entity.getAmount();
-	date = entity.getDate();
-	seller =  new SellerDTO(entity.getSeller());
-	}
+    private Integer visited;
+    private Integer deals;
+    private Double amount;
+    private LocalDate date;
 
-	public Long getId() {
-		return id;
-	}
+    private SellerDTO seller;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public SaleDTO() {
+    }
 
-	public Integer getVisited() {
-		return visited;
-	}
+    public SaleDTO(Long id, Integer visited, Integer deals, Double amount, LocalDate date, SellerDTO seller) {
+        this.id = id;
+        this.visited = visited;
+        this.deals = deals;
+        this.amount = amount;
+        this.date = date;
+        this.seller = seller;
+    }
 
-	public void setVisited(Integer visited) {
-		this.visited = visited;
-	}
 
-	public Integer getDeals() {
-		return deals;
-	}
+    public SaleDTO(Sale entity) {
+        this.id = entity.getId();
+        this.visited = entity.getVisited();
+        this.deals = entity.getDeals();
+        this.amount = entity.getAmount();
+        this.date = entity.getDate();
+        this.seller = new SellerDTO(entity.getSeller());
+    }
 
-	public void setDeals(Integer deals) {
-		this.deals = deals;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public Double getAmount() {
-		return amount;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setAmount(Double amount) {
-		this.amount = amount;
-	}
+    public Integer getVisited() {
+        return visited;
+    }
 
-	public LocalDate getDate() {
-		return date;
-	}
+    public void setVisited(Integer visited) {
+        this.visited = visited;
+    }
 
-	public void setDate(LocalDate date) {
-		this.date = date;
-	}
+    public Integer getDeals() {
+        return deals;
+    }
 
-	public SellerDTO getSeller() {
-		return seller;
-	}
+    public void setDeals(Integer deals) {
+        this.deals = deals;
+    }
 
-	public void setSeller(SellerDTO seller) {
-		this.seller = seller;
-	}
+    public Double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Double amount) {
+        this.amount = amount;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public SellerDTO getSeller() {
+        return seller;
+    }
+
+    public void setSeller(SellerDTO seller) {
+        this.seller = seller;
+    }
 }
